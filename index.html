@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pameran Game - Showcase</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navigation Icons -->
+    <!-- <div class="nav-icons">
+      <div class="nav-icon" onclick="showPage('home')" title="Home">🏠</div>
+      <div class="nav-icon" onclick="showPage('about')" title="About">👥</div>
+    </div> -->
+
+    <!-- Back Button -->
+    <div class="back-button" onclick="showPage('home')">←</div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal-content">
+        <button class="video-modal-close" onclick="closeVideoModal()">×</button>
+        <div class="video-modal-title" id="modalTitle">Trailer</div>
+        <video id="modalVideo" controls>
+          <source id="modalVideoSource" src="" type="video/mp4" />
+        </video>
+        <div
+          class="video-placeholder"
+          id="modalPlaceholder"
+          style="display: none"
+        >
+          <div class="video-placeholder-icon">🎬</div>
+          <div class="video-placeholder-text">
+            <strong>Video tidak ditemukan</strong><br />
+            <span id="modalPlaceholderText"
+              >Silakan letakkan file video di folder videos/</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Page -->
+    <div class="page active" id="home">
+      <div class="home-header">
+        <h1>PAMERAN<br />GAME</h1>
+        <div class="subtitle">Showcase Kelompok Kami — 2025</div>
+      </div>
+
+      <div class="game-grid">
+        <div class="game-card" onclick="showGame(1)">
+          <div class="number">1</div>
+          <h2>BANANA<br />KING</h2>
+          <div class="author">By Wieda Ashkasya Meysun</div>
+          <p>
+            Petualangan seru seekor monyet pemberani yang menjelajahi hutan
+            untuk mengumpulkan pisang emas sambil menghindari berbagai rintangan
+            berbahaya untuk menjadi raja monyet.
+          </p>
+          <div class="click-hint">Klik untuk detail →</div>
+        </div>
+
+        <div class="game-card" onclick="showGame(2)">
+          <div class="number">2</div>
+          <h2>KING OF<br />STREET</h2>
+          <div class="author">By Muhammad Fardhan Permana</div>
+          <p>
+            Game aksi jalanan yang intens di mana pemain bertarung untuk
+            menguasai wilayah kota dengan gaya bertarung yang unik dan penuh
+            strategi.
+          </p>
+          <div class="click-hint">Klik untuk detail →</div>
+        </div>
+
+        <div class="game-card" onclick="showGame(3)">
+          <div class="number">3</div>
+          <h2>OPERATION<br />SILENT FACTORY</h2>
+          <div class="author">By Nuril Jannati</div>
+          <p>
+            Misi stealth yang menegangkan di pabrik rahasia. Pemain harus
+            menyelinap tanpa terdeteksi untuk mengungkap konspirasi berbahaya.
+          </p>
+          <div class="click-hint">Klik untuk detail →</div>
+        </div>
+
+        <div class="game-card" onclick="showGame(4)">
+          <div class="number">4</div>
+          <h2>BEGINNER<br />NINJA</h2>
+          <div class="author">By Boya Rizky Agung</div>
+          <p>
+            Perjalanan seorang ninja pemula yang berlatih menguasai seni bela
+            diri kuno sambil menghadapi tantangan dan musuh di setiap level.
+          </p>
+          <div class="click-hint">Klik untuk detail →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Detail Pages -->
+    <div class="page" id="game1">
+      <div class="game-detail">
+        <div class="detail-header">
+          <div class="detail-number">1</div>
+          <div class="detail-title">
+            <h1>BANANA KING</h1>
+            <div class="detail-meta">
+              Developer: Wieda Ashkasya Meysun • Genre: Platformer Adventure
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Gallery -->
+        <div class="character-gallery">
+          <h3>Karakter</h3>
+          <div class="character-grid">
+            <div class="character-card">
+              <div class="character-image">
+                <img
+                  src="./img/zuzu.png"
+                  alt="Blue Bat"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+              </div>
+              <h4>Zuzu</h4>
+              <p>
+                Monyet pemberani dengan kelincahan luar biasa dan refleks tajam
+                untuk mengumpulkan pisang emas.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">
+                <img
+                  src="./img/blue-bat.png"
+                  alt="Blue Bat"
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
+              </div>
+              <h4>Blue Bat</h4>
+              <p>
+                Penjaga langit yang menghalangi jalan Zuzu dengan serangan
+                terbang.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Sinopsis</h3>
+          <p>
+            Dalam sebuah hutan, Zuzu si monyet kecil 
+            ingin menjadi Raja Monyet yang dihormati. Namun, gelar bergengsi ini harus
+            diraih dengan pembuktian diri yang tidak mudah.
+          </p>
+          <p>
+            Perjalanannya dipenuhi tantangan mulai dari platform yang rapuh,
+            musuh-musuh yang mengintai, hingga puzzle yang membutuhkan strategi
+            cerdas. Setiap langkah Zuzu harus dipikirkan dengan matang.
+          </p>
+          <p>
+            Yang membuatnya lebih menarik, pisang emas tersebar di seluruh level
+            sebagai hadiah utama. Zuzu harus mengumpulkan pisang-pisang ini
+            sambil menghindari jebakan dan mengalahkan musuh, membuktikan bahwa
+            dia layak menyandang gelar Raja Monyet yang sejati.
+          </p>
+
+          <p>Apakah dia bisa?</p>
+        </div>
+
+        <button
+          class="cta-button secondary"
+          onclick="openVideoModal('BANANA KING', 'videos/banana-king-trailer.mp4')"
+        >
+          WATCH TRAILER
+        </button>
+      </div>
+    </div>
+
+    <div class="page" id="game2">
+      <div class="game-detail">
+        <div class="detail-header">
+          <div class="detail-number">2</div>
+          <div class="detail-title">
+            <h1>KING OF STREET</h1>
+            <div class="detail-meta">
+              Developer: Muhammad Fardhan Permana • Genre: Fighting / Action
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Gallery -->
+        <div class="character-gallery">
+          <h3>Karakter</h3>
+          <div class="character-grid">
+            <div class="character-card">
+              <div class="character-image">🥊</div>
+              <h4>Ryu "The Challenger"</h4>
+              <p>
+                Protagonis yang ingin membuktikan diri sebagai petarung terkuat
+                di jalanan dengan teknik campuran bela diri.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">👊</div>
+              <h4>Boss Downtown</h4>
+              <p>
+                Pemimpin distrik pusat kota dengan gaya tinju brutal dan
+                kecepatan serangan yang mematikan.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">🦵</div>
+              <h4>Boss Eastside</h4>
+              <p>
+                Master kickboxing yang menguasai wilayah timur dengan serangan
+                kaki yang presisi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Sinopsis</h3>
+          <p>
+            King of Street membawa pemain ke dunia pertarungan jalanan yang
+            keras dan kompetitif. Sebagai petarung baru yang ingin membuktikan
+            diri, pemain harus naik pangkat dengan mengalahkan berbagai lawan di
+            berbagai distrik kota.
+          </p>
+          <p>
+            Setiap wilayah memiliki boss unik dengan gaya bertarung berbeda—dari
+            petinju jalanan hingga ahli bela diri tradisional. Pemain dapat
+            mengembangkan karakter dengan mempelajari combo baru, meningkatkan
+            statistik seperti strength, speed, dan stamina, serta membuka kostum
+            dan fighting style eksklusif.
+          </p>
+          <p>
+            Dengan sistem pertarungan yang dalam dan cerita yang engaging
+            tentang perjalanan dari nobody menjadi champion, game ini menawarkan
+            pengalaman fighting game yang seru, kompetitif, dan memuaskan bagi
+            penggemar genre fighting.
+          </p>
+        </div>
+
+        <button
+          class="cta-button secondary"
+          onclick="openVideoModal('KING OF STREET', 'videos/king-of-street-trailer.mp4')"
+        >
+          WATCH TRAILER
+        </button>
+      </div>
+    </div>
+
+    <div class="page" id="game3">
+      <div class="game-detail">
+        <div class="detail-header">
+          <div class="detail-number">3</div>
+          <div class="detail-title">
+            <h1>OPERATION SILENT FACTORY</h1>
+            <div class="detail-meta">
+              Developer: Nuril Jannati • Genre: Stealth / Strategy
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Gallery -->
+        <div class="character-gallery">
+          <h3>Karakter</h3>
+          <div class="character-grid">
+            <div class="character-card">
+              <div class="character-image">🕵️</div>
+              <h4>Agent Shadow</h4>
+              <p>
+                Agen elite dengan keahlian infiltrasi, hacking, dan combat
+                stealth untuk misi-misi berbahaya.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">👔</div>
+              <h4>Factory Commander</h4>
+              <p>
+                Antagonis kejam yang mengawasi operasi pabrik ilegal dengan
+                teknologi surveillance canggih.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">💂</div>
+              <h4>Elite Guards</h4>
+              <p>
+                Penjaga terlatih dengan AI responsif yang patrol area dengan
+                pola yang unpredictable.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Sinopsis</h3>
+          <p>
+            Operation Silent Factory adalah game stealth yang menegangkan di
+            mana pemain berperan sebagai Agent Shadow, agen rahasia yang
+            ditugaskan menginvestigasi pabrik mencurigakan yang diduga
+            memproduksi senjata ilegal dan melakukan eksperimen berbahaya.
+          </p>
+          <p>
+            Pemain harus menggunakan strategi, timing yang tepat, dan berbagai
+            gadget canggih untuk menyelinap melewati sistem keamanan ketat,
+            menghindari patroli penjaga yang alert, hack terminal untuk mendapat
+            informasi, dan mengumpulkan bukti tanpa terdeteksi. Setiap kesalahan
+            dapat memicu alarm dan membuat misi gagal total.
+          </p>
+          <p>
+            Dengan atmosfer yang mencekam, lighting dinamis yang menciptakan
+            area bayangan untuk bersembunyi, dan level design yang kompleks
+            dengan multiple infiltration routes, game ini menguji kesabaran,
+            kecerdasan taktis, dan kemampuan improvisasi pemain di setiap sudut
+            pabrik yang gelap dan berbahaya.
+          </p>
+        </div>
+
+        <button
+          class="cta-button secondary"
+          onclick="openVideoModal('OPERATION SILENT FACTORY', 'videos/operation-silent-factory-trailer.mp4')"
+        >
+          WATCH TRAILER
+        </button>
+      </div>
+    </div>
+
+    <div class="page" id="game4">
+      <div class="game-detail">
+        <div class="detail-header">
+          <div class="detail-number">4</div>
+          <div class="detail-title">
+            <h1>BEGINNER NINJA</h1>
+            <div class="detail-meta">
+              Developer: Boya Rizky Agung • Genre: Action Platformer
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Gallery -->
+        <div class="character-gallery">
+          <h3>Karakter</h3>
+          <div class="character-grid">
+            <div class="character-card">
+              <div class="character-image">🥷</div>
+              <h4>Kaito</h4>
+              <p>
+                Ninja pemula yang penuh determinasi untuk menguasai seni ninja
+                kuno dan melindungi klannya.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">🧙</div>
+              <h4>Master Takeshi</h4>
+              <p>
+                Mentor bijaksana yang membimbing perjalanan Kaito dengan
+                filosofi dan teknik ninja legendaris.
+              </p>
+            </div>
+            <div class="character-card">
+              <div class="character-image">😈</div>
+              <h4>Shadow Clan Leader</h4>
+              <p>
+                Boss akhir dari organisasi musuh yang mengancam kedamaian dengan
+                teknik ninja gelap.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Sinopsis</h3>
+          <p>
+            Beginner Ninja menceritakan perjalanan transformatif seorang ninja
+            muda bernama Kaito yang baru memulai pelatihannya di dojo klan
+            legendaris. Pemain akan mengikuti evolusi Kaito dari pemula yang
+            canggung dan ragu-ragu menjadi ninja yang mahir, percaya diri, dan
+            dihormati oleh seluruh klan.
+          </p>
+          <p>
+            Setiap level merepresentasikan tahap pelatihan berbeda—mulai dari
+            menguasai teknik dasar parkour dan wall-running, melempar shuriken
+            dengan presisi tinggi, pertarungan pedang melawan sesama murid dalam
+            sparring session, hingga menghadapi musuh sesungguhnya dari Shadow
+            Clan yang mengancam kedamaian dan eksistensi klan.
+          </p>
+          <p>
+            Dengan visual bergaya manga/anime yang vibrant, narasi yang
+            inspiratif tentang pantang menyerah dan growth mindset, serta
+            soundtrack yang epic, game ini mengajarkan nilai-nilai ketekunan,
+            disiplin, hormat pada guru, dan keberanian sambil memberikan
+            gameplay action-platformer yang seru, challenging, dan sangat
+            satisfying saat menguasai setiap skill baru.
+          </p>
+        </div>
+
+        <button
+          class="cta-button secondary"
+          onclick="openVideoModal('BEGINNER NINJA', 'videos/beginner-ninja-trailer.mp4')"
+        >
+          WATCH TRAILER
+        </button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- About Page -->
+  </body>
+</html>
